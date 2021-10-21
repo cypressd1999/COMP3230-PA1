@@ -124,7 +124,7 @@ int main(int argc, char *argv[]){
         // handle signal
         if (WIFSIGNALED(status)){
             int sig_num = WTERMSIG(status);
-            char* sig_name = strdup(sys_signame[sig_num]);
+            char* sig_name = strdup(strsignal[sig_num]);
             to_upper(sig_name);
             printf("\nThe command \"%s\" is interrupted by the signal number = %d (SIG%s)\n\n", argv[command[j]], sig_num, sig_name);
         }else{
